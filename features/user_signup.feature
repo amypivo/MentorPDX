@@ -5,10 +5,10 @@ Feature: Contact me
 
     Scenario: User signs up to be a mentor
         Given I am on the home page
-        And I fill in "first name" with "John"
-        And I fill in "last name" with "Smith"
-        And I fill in "email" with "john@mail.me"
-        And I check "weekly"
-        And I fill in "city" with "Portland"
-        When I press "Sumit"
-        Then page should have notice message "You have signed up to be a mentor!."
+        And I fill in "user_first_name" with "John"
+        And I fill in "user_last_name" with "Smith"
+        And I fill in "user_email" with "john@mail.me"
+        And I check "user_availbilty_weekly"
+        And I fill in "user_city" with "Portland"
+        When I press "Submit"
+        Then page should have notice "You have signed up to be a mentor!"

@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     @user.availbilty  = user_params[:availbilty].join
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to @user, notice: 'You have signed up to be a mentor!' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }

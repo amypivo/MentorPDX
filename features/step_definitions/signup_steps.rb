@@ -6,14 +6,14 @@ Given(/^I fill in "(.*?)" with "(.*?)"$/) do |field, input|
   fill_in(field, :with => input)
 end
 
-Given(/^I check "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+Given(/^I check "(.*?)"$/) do |checkbox|
+  check(checkbox)
 end
 
-When(/^I press "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+When(/^I press "(.*?)"$/) do |button|
+  click_button(button)
 end
 
-Then(/^page should have notice message "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+Then(/^page should have notice "(.*?)"$/) do |arg1|
+  expect(page).to have_content arg1
 end

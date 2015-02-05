@@ -27,7 +27,7 @@
   <div class="field">
     <%= f.label :availbilty %><br>
     <label>Monthly</label>
-    <%= check_box(:user, :availbilty, {:multiple => true}, 1, nil) %> <br>
+    <%= check_box(:user, :availbilty, {:multiple => true}, :weekly, nil) %> <br>
     <label>Bi-Weekly</label>
     <%= check_box(:user, :availbilty, {:multiple => true}, 2, nil) %> <br>
     <label>Weekly</label>
@@ -38,6 +38,6 @@
     <%= f.text_field :city %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Submit' %>
   </div>
 <% end %>
