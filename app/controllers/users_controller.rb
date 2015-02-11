@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     @user.availbilty  = user_params[:availbilty].join
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'You have signed up to be a mentor!' }
+        format.html { redirect_to @user, notice: signup_notice }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -70,6 +70,17 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :city, :availbilty  => [])
+      params.require(:user).permit(:first_name, :last_name, :email, :city, :mentor, :student, :availbilty  => [])
     end
-end
+
+    #needs to be moved
+    def signup_notice
+      if @user.mentor
+        'You have signed up to be a mentor!'
+      elsif @user.student
+        'You have signed up to be a student!'
+      elsif @user.student && @user.mentor
+        'You have signed up to be a student and a mentor!'
+      end
+    end
+  end
