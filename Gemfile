@@ -22,6 +22,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner', :git => 'git://github.com/bmabey/database_cleaner.git'
   gem 'capybara-rails'
+  gem 'shoulda'
 end
 
 group :production do

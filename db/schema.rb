@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150205035929) do
+ActiveRecord::Schema.define(version: 20150211031651) do
+
+  create_table "mentorships", force: :cascade do |t|
+    t.integer "mentor_id"
+    t.integer "student_id"
+  end
+
+  add_index "mentorships", ["mentor_id"], name: "index_mentorships_on_mentor_id"
+  add_index "mentorships", ["student_id"], name: "index_mentorships_on_student_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
